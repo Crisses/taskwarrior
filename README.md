@@ -6,7 +6,25 @@ Scripts and tools to help with using TaskWarrior, both in the terminal (scripts)
 
 ### taskchain
 
-This is a bash version of the taskchain command.  Usage:
+This is a bash script version of the taskchain command.
+
+#### Installation:
+
+You may want to install this in /usr/local/bin, or you can run it directly from your home directory.
+
+You will need to set executable permissions on the file:
+
+`chmod +x taskchain`
+
+If the file is in your executable path you can run it directly:
+
+`taskchain 1 2 3	`
+
+If the file is in your home directory, you can run it anywhere with:
+
+`~/taskchain 1 2 3`
+
+#### Usage:
 
 `taskchain <list of space-separated task ids>`
 
