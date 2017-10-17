@@ -1,8 +1,28 @@
 #!/bin/bash
+# This is a bash version of the taskchain command. Usage:
+#
+# taskchain <list of space-separated task ids>
+#
+# This command creates a dependency heirarchy of blocked tasks. 
+# The first task must be completed before you can work on the 
+# second task. The second task must be completed before you can 
+# work on the third task.
+#
+# Use example:
+#
+# taskchain 1 2 3
+#
+# This is the same as:
+#
+# task 2 modify depends:1
+# task 3 modify depends:2
+
+
 if [ $# -gt 2 ]; then
     echo "Your command line contains $# arguments"
 else
-    echo "Your command does not contain enough arguments"
+    echo "Your command does not contain enough arguments:
+usage: taskchain <list of space-separated task ids>"
     exit 1
 fi
 
