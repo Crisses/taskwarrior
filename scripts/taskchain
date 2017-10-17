@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ $# -gt 2 ]; then
+    echo "Your command line contains $# arguments"
+else
+    echo "Your command does not contain enough arguments"
+    exit 1
+fi
+
+array=( "$@" )
+arraylength=${#array[@]}
+for (( i=2; i<${arraylength}+1; i++ ));
+do
+#   echo "${array[$i-1]}"
+   /usr/local/bin/task ${array[$i-1]} modify depends:${array[$i-2]}
+
+done
